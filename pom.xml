@@ -4,64 +4,25 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example.maven-project</groupId>
+    <groupId>com.example.mavenproject</groupId>
     <artifactId>maven-project</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <name>Maven Project</name>
-    <description>Sample Maven Multi-Module Project</description>
 
     <modules>
         <module>server</module>
         <module>webapp</module>
     </modules>
 
-    <!-- Common Properties -->
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <!-- Plugin Management -->
-    <build>
-        <pluginManagement>
-            <plugins>
-
-                <!-- Compiler Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                    </configuration>
-                </plugin>
-
-                <!-- Surefire Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.22.2</version>
-                </plugin>
-
-                <!-- Site Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-site-plugin</artifactId>
-                    <version>3.9.1</version>
-                </plugin>
-
-            </plugins>
-        </pluginManagement>
-    </build>
-
-    <!-- Dependency Management -->
     <dependencyManagement>
         <dependencies>
-
+            
             <!-- JUnit -->
             <dependency>
                 <groupId>junit</groupId>
@@ -69,13 +30,13 @@
                 <version>4.13.2</version>
                 <scope>test</scope>
             </dependency>
-
-            <!-- Mockito -->
+            
+            <!-- Servlet API for webapp -->
             <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>4.2.0</version>
-                <scope>test</scope>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+                <scope>provided</scope>
             </dependency>
 
         </dependencies>
